@@ -3,9 +3,9 @@ import { FaEye } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { MdFormatListBulletedAdd } from "react-icons/md";
 import { FaAddressCard } from "react-icons/fa";
-
-
-
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import { FaUserCircle } from "react-icons/fa";
+import { GrUserSettings } from "react-icons/gr";
 
 const Header = () => {
   return (
@@ -58,6 +58,23 @@ const Header = () => {
         </li>
       </ul>
       {/* User Dropdown */}
+
+      <DropdownMenu>
+        <DropdownMenuTrigger>
+          <div className='flex gap-4 items-center justify-center'>
+            <FaUserCircle className='w-8 h-8' />
+            <p className='text-red-600 flex gap-2 items-center justify-center'>
+              Hello, User <GrUserSettings />
+            </p>
+          </div>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Subscription</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </header>
   );
 };

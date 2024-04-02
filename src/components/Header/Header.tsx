@@ -6,56 +6,46 @@ import { FaAddressCard } from "react-icons/fa";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { FaUserCircle } from "react-icons/fa";
 import { GrUserSettings } from "react-icons/gr";
+import { NavLink } from "react-router-dom";
+
+const navActive = (isActive: boolean) => {
+  return isActive
+    ? "bg-red-600 text-white flex items-center justify-center gap-2 font-semibold border-[1px] border-red-600 rounded-md py-3 px-1 hover:bg-red-600 hover:text-white transition-all"
+    : "text-red-600 flex items-center justify-center gap-2 font-semibold border-[1px] border-black rounded-md py-3 px-1 hover:border-opacity-0 hover:bg-red-600 hover:text-white transition-all";
+};
 
 const Header = () => {
   return (
     <header className='py-6 px-4 bg-gray-200 shadow-lg w-full rounded-b-[40px]'>
       <div className='flex flex-col md:flex-row items-center justify-between gap-4 w-full m-auto'>
-        {/* logo */}
         <div>
           <img src={logo} alt='Logo' />
         </div>
-        {/* List */}
         <ul className='flex flex-wrap justify-center gap-4'>
           <li className='list-none'>
-            <a
-              href='#'
-              className='text-red-600 flex items-center justify-center gap-2 font-semibold border-[1px] border-black rounded-md py-3 px-1 hover:border-opacity-0 hover:bg-red-600 hover:text-white transition-all'
-            >
+            <NavLink to='/recently-viewed' className={({ isActive }) => navActive(isActive)}>
               <FaEye /> Recently Viewed
-            </a>
+            </NavLink>
           </li>
           <li className='list-none'>
-            <a
-              href='#'
-              className='text-red-600 flex items-center justify-center gap-2 font-semibold border-[1px] border-black rounded-md py-3 px-1 hover:border-opacity-0 hover:bg-red-600 hover:text-white transition-all'
-            >
+            <NavLink to='/shortlist' className={({ isActive }) => navActive(isActive)}>
               <FaHeart /> Shortlist
-            </a>
+            </NavLink>
           </li>
           <li className='list-none'>
-            <a
-              href='#'
-              className='text-red-600 flex items-center justify-center gap-2 font-semibold border-[1px] border-black rounded-md py-3 px-1 hover:border-opacity-0  hover:bg-red-600 hover:text-white transition-all'
-            >
+            <NavLink to={"/my-listing"} className={({ isActive }) => navActive(isActive)}>
               <MdFormatListBulletedAdd /> My Listing
-            </a>
+            </NavLink>
           </li>
           <li className='list-none'>
-            <a
-              href='#'
-              className='text-red-600 flex items-center justify-center gap-2 font-semibold border-[1px] border-black rounded-md py-3 px-1 hover:border-opacity-0 hover:bg-red-600 hover:text-white transition-all'
-            >
+            <NavLink to={"/property-leads"} className={({ isActive }) => navActive(isActive)}>
               <FaAddressCard /> Property Leads
-            </a>
+            </NavLink>
           </li>
           <li className='list-none'>
-            <a
-              href='#'
-              className='text-red-600 flex items-center justify-center gap-2 font-semibold border-[1px] border-black rounded-md py-3 px-1 hover:border-opacity-0 hover:bg-red-600 hover:text-white transition-all'
-            >
+            <NavLink to={"/professional-leads"} className={({ isActive }) => navActive(isActive)}>
               <FaAddressCard /> Professional leads
-            </a>
+            </NavLink>
           </li>
         </ul>
         {/* User Dropdown */}

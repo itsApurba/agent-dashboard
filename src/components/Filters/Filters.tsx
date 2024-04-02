@@ -1,6 +1,3 @@
-// import { DropdownMenu, DropdownMenuContent, DropdownMenuSeparator, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-// import { DropdownMenuRadioGroup, DropdownMenuRadioItem } from "../ui/dropdown-menu";
-// import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import Filter from "./Filter";
 

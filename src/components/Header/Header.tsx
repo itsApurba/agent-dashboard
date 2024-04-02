@@ -1,4 +1,4 @@
-import logo from "./logo.png";
+import logo from "../../assets/img/logo.png";
 import { FaEye } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { MdFormatListBulletedAdd } from "react-icons/md";

@@ -59,12 +59,15 @@ const PropertyLeads = () => {
           <h3 className='text-xl text-red-600'>Personal Details</h3>
           <div className='flex flex-col md:flex-row gap-4 max-w-lg w-full'>
             <div className='flex flex-col items-start gap-2 w-full'>
-              <Label htmlFor='doc' className='text-xl font-normal'>
+              <Label htmlFor='doc' className='text-xl font-normal text-left'>
                 Upload A Company Incorporate/ PAN proof
               </Label>
               <Input type='file' id='doc' />
             </div>
           </div>
+        </div>
+        <div className='flex justify-center w-full'>
+          <button className="bg-red-600 text-white px-4 py-2 rounded-md">Save</button>
         </div>
       </div>
     </div>
